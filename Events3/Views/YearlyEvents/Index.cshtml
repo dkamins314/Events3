@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Events3.ViewModels.YearlyEventsViewModel>
+﻿@model IEnumerable<Events3.Models.YearlyEvents>
 
 @{
     ViewData["Title"] = "Index";
@@ -14,6 +14,9 @@
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.SpecialEvents)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SpecialShabassos)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Months)
@@ -35,6 +38,9 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.SpecialEvents)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecialShabassos)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Months)

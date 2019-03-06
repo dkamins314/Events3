@@ -4,14 +4,16 @@ using Events3.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Events3.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190306063319_migration8a")]
+    partial class migration8a
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -42,23 +44,11 @@ namespace Events3.Data.Migrations
                     b.ToTable("YearlyEvents_1");
                 });
 
-            modelBuilder.Entity("Events3.ViewModels.YearlyEventsViewModel", b =>
+            modelBuilder.Entity("Events3.ViewModels.model", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("EndTime");
-
-                    b.Property<int>("Months");
-
-                    b.Property<int>("Parshios");
-
-                    b.Property<int>("SpecialEvents");
-
-                    b.Property<int>("SpecialShabassos");
-
-                    b.Property<string>("StartTime");
 
                     b.HasKey("Id");
 

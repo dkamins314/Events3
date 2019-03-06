@@ -6,11 +6,18 @@ using System.Threading.Tasks;
 
 namespace Events3.Models
 {
+    
     public class YearlyEvents
     {
+        public YearlyEvents()
+        {
+
+        }
+    
         [Key]
         public int Id { get; set; }
         public SpecialEvents SpecialEvents { get; set; }
+        public SpecialShabassos SpecialShabassos { get; set; }
         public Months Months { get; set; }
         public Parshios Parshios { get; set; }
         public string StartTime { get; set; }
@@ -18,6 +25,8 @@ namespace Events3.Models
     }
     public enum SpecialEvents
     {
+        [Display(Name = "Please Select Event")]
+        SelectEvent,
         [Display(Name = "Selichos")]
         Selichos,
        [Display(Name = "Rosh Chodesh")]
@@ -62,6 +71,13 @@ namespace Events3.Models
         NinthOfAv,
         [Display(Name = "Tu B'av")]
         TuBeAv,
+        
+    }
+
+    public enum SpecialShabassos
+    {
+        [Display(Name = "Please Select Special Shabbos")]
+        SelectSpecialShabbos,
         [Display(Name = "Parshas Shekalim")]
         ParshasShekalim,
         [Display(Name = "Parshas Zachor")]
@@ -81,25 +97,32 @@ namespace Events3.Models
         [Display(Name = "Shabbos Shuva")]
         ShabbosShuva
     }
+
+
+
     public enum Months
     {
-        Tishrei = 1,
+        [Display(Name = "Please Select Month")]
+        SelectMonth,
+        Tishrei, 
         Cheshvan,
         Kislev,
         Teves,
         Shvat,
         AdarI,
-        AdarII,
         Nissan,
         Iyar,
         Sivan,
         Tamuz,
         Av,
-        Elul
+        Elul,
+        AdarII,
     }
     public enum Parshios
     {
-        Bereshis = 1,
+        [Display(Name = "Please Select Parshas Hashavua")]
+        SelectParsha,
+        Bereshis,
         Noach,
         Lech_Lecha,
         Vayera,
