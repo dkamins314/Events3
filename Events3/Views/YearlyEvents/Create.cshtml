@@ -41,8 +41,9 @@
                 <span asp-validation-for="EndTime" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary"
-                 onclick="window.location.href='<%= Url.Action("Index","YearlyEvents")'" %>;/>
+                <button type="submit"  class="btn btn-primary" 
+                 onclick="window.location.href='<%= Url.Action("Index","YearlyEvents")'" %>
+                 Create</button>
             </div>
         </form>
     </div>
