@@ -23,6 +23,7 @@ namespace Events3.Controllers
         // GET: YearlyEvents
         public async Task<IActionResult> Index()
         {
+           // List<YearlyEvents> yearlyEvents = _context.YearlyEvents.ToList();
             return View(await _context.YearlyEvents_1.ToListAsync());
         }
 
@@ -46,9 +47,10 @@ namespace Events3.Controllers
 
         // GET: YearlyEvents/Create
         public IActionResult Create()
-        {
-            YearlyEventsViewModel yearlyEventsViewModel = new YearlyEventsViewModel();
-            return View();
+        { CreateYearlyEventsViewModel createYearlyEventsViewModel =
+                new CreateYearlyEventsViewModel();
+        
+            return View(createYearlyEventsViewModel);
         }
 
         // POST: YearlyEvents/Create
@@ -56,21 +58,12 @@ namespace Events3.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,SpecialEvents,SpecialShabassos,Months,Parshios,StartTime,EndTime")] YearlyEvents yearlyEvents)
+        public async Task<IActionResult> Create
+            ([Bind("Id,StartingDate,EndingDate,SpecialEvents,SpecialShabassos,Months,Parshios,StartTime,EndTime")] YearlyEvents yearlyEvents)
         {
-           // YearlyEventsViewModel newYearlyEventsViewModel= _context.YearlyEventsViewModel(ym=>ym.Id==YearlyEventViewModel
             if (ModelState.IsValid)
-            { 
-                YearlyEvents newYearlyEvents = new YearlyEvents
-                {
-                    SpecialEvents = yearlyEvents.SpecialEvents,
-                    SpecialShabassos = yearlyEvents.SpecialShabassos,
-                    Months = yearlyEvents.Months,
-                    Parshios = yearlyEvents.Parshios,
-                    StartTime = yearlyEvents.StartTime,
-                    EndTime = yearlyEvents.EndTime
-                };
-            
+               
+            {
                 _context.Add(yearlyEvents);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -101,7 +94,6 @@ namespace Events3.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,SpecialEvents,SpecialShabassos,Months,Parshios,StartTime,EndTime")] YearlyEvents yearlyEvents)
         {
-
             if (id != yearlyEvents.Id)
             {
                 return NotFound();

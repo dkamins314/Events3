@@ -6,6 +6,11 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20190310191513_migration5.cs" />
+    <Compile Remove="Data\Migrations\20190310191513_migration5.Designer.cs" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="DevExtreme.AspNet.Core" Version="18.2.6" />

@@ -15,10 +15,12 @@ namespace Events3.Data
         {
         }
 
-        public object YearlyEvents { get; internal set; }
-
         public DbSet<Events3.ViewModels.YearlyEventsViewModel> YearlyEventsViewModel { get; set; }
 
         public DbSet<Events3.Models.YearlyEvents> YearlyEvents_1 { get; set; }
+
+        public object YearlyEvents { get; internal set; }
+
+        public DbSet<Events3.ViewModels.CreateYearlyEventsViewModel> CreateYearlyEventsViewModel { get; set; }
     }
 }

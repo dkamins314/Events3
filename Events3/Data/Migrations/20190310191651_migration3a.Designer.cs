@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Events3.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190228013126_migration7a")]
-    partial class migration7a
+    [Migration("20190310191651_migration3a")]
+    partial class migration3a
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,6 +21,60 @@ namespace Events3.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Events3.Models.YearlyEvents", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("EndTime");
+
+                    b.Property<DateTime>("EndingDate");
+
+                    b.Property<int>("Months");
+
+                    b.Property<int>("Parshios");
+
+                    b.Property<int>("SpecialEvents");
+
+                    b.Property<int>("SpecialShabassos");
+
+                    b.Property<string>("StartTime");
+
+                    b.Property<DateTime>("StartingDate");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("YearlyEvents_1");
+                });
+
+            modelBuilder.Entity("Events3.ViewModels.CreateYearlyEventsViewModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("EndTime");
+
+                    b.Property<DateTime>("EndingDate");
+
+                    b.Property<int>("Months");
+
+                    b.Property<int>("Parshios");
+
+                    b.Property<int>("SpecialEvents");
+
+                    b.Property<int>("SpecialShabassos");
+
+                    b.Property<string>("StartTime");
+
+                    b.Property<DateTime>("StartingDate");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CreateYearlyEventsViewModel");
+                });
+
             modelBuilder.Entity("Events3.ViewModels.YearlyEventsViewModel", b =>
                 {
                     b.Property<int>("Id")
@@ -29,13 +83,19 @@ namespace Events3.Data.Migrations
 
                     b.Property<string>("EndTime");
 
+                    b.Property<DateTime>("EndingDate");
+
                     b.Property<int>("Months");
 
                     b.Property<int>("Parshios");
 
                     b.Property<int>("SpecialEvents");
 
+                    b.Property<int>("SpecialShabassos");
+
                     b.Property<string>("StartTime");
+
+                    b.Property<DateTime>("StartingDate");
 
                     b.HasKey("Id");
 

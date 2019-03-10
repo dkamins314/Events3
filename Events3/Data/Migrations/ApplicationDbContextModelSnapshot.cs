@@ -27,6 +27,8 @@ namespace Events3.Data.Migrations
 
                     b.Property<string>("EndTime");
 
+                    b.Property<DateTime>("EndingDate");
+
                     b.Property<int>("Months");
 
                     b.Property<int>("Parshios");
@@ -37,9 +39,38 @@ namespace Events3.Data.Migrations
 
                     b.Property<string>("StartTime");
 
+                    b.Property<DateTime>("StartingDate");
+
                     b.HasKey("Id");
 
                     b.ToTable("YearlyEvents_1");
+                });
+
+            modelBuilder.Entity("Events3.ViewModels.CreateYearlyEventsViewModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("EndTime");
+
+                    b.Property<DateTime>("EndingDate");
+
+                    b.Property<int>("Months");
+
+                    b.Property<int>("Parshios");
+
+                    b.Property<int>("SpecialEvents");
+
+                    b.Property<int>("SpecialShabassos");
+
+                    b.Property<string>("StartTime");
+
+                    b.Property<DateTime>("StartingDate");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CreateYearlyEventsViewModel");
                 });
 
             modelBuilder.Entity("Events3.ViewModels.YearlyEventsViewModel", b =>
@@ -50,6 +81,8 @@ namespace Events3.Data.Migrations
 
                     b.Property<string>("EndTime");
 
+                    b.Property<DateTime>("EndingDate");
+
                     b.Property<int>("Months");
 
                     b.Property<int>("Parshios");
@@ -59,6 +92,8 @@ namespace Events3.Data.Migrations
                     b.Property<int>("SpecialShabassos");
 
                     b.Property<string>("StartTime");
+
+                    b.Property<DateTime>("StartingDate");
 
                     b.HasKey("Id");
 
