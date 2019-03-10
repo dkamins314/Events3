@@ -166,5 +166,23 @@ namespace Events3.Models
             Matot_Masei,
             Nitzavim_Vayeilech
         }
+
+        public enum LifeEvents
+        {
+            Birth,
+            ShalomZachar,
+            Bris,
+            Upshearen,
+            BarMitzvah,
+            Graduation,
+            Siyum,
+            Engagement,
+            ShabbosKallah,
+            Marriage,
+            Anniversary,
+            Death,
+            Levaya
+
+        }
     }
 }
