@@ -11,10 +11,6 @@ namespace Events3.ViewModels
     public class CreateYearlyEventsViewModel
     {
 
-        // public int CategoryID { get; set; }
-        //   public List<SelectListItem> Items { get; set; }
-        //   [Display(Name = "Category")]
-        //   public string Name { get; set; }
         [Key] public int Id { get; set; }
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{MM-dd-yyyy}")]
@@ -28,18 +24,23 @@ namespace Events3.ViewModels
         [Display(Name = "Ending Date")]
         public DateTime EndingDate { get; set; }
 
-        [Display(Name = "Ending Time")] public string EndTime { get; set; }
+        [Display(Name = "Ending Time")]
+        public string EndTime { get; set; }
         public SpecialEvents SpecialEvents { get; set; }
         public SpecialShabassos SpecialShabassos { get; set; }
         public Months Months { get; set; }
         public Parshios Parshios { get; set; }
+        public LifeEvents LifeEvents { get; set; }
+        [MaxLength(1000)]
+        public string EventDescription { get; set; }
 
         public CreateYearlyEventsViewModel() { }
 
 
         public CreateYearlyEventsViewModel(DateTime startingDate, string startTime,
             DateTime endingDate, string endTime, SpecialEvents specialEvents,
-            SpecialShabassos specialShabassos, Months months, Parshios parshios)
+            SpecialShabassos specialShabassos, Months months, Parshios parshios,
+            LifeEvents lifeEvents, string eventDescription)
         {
             StartingDate = startingDate;
             StartTime = startTime;
@@ -49,6 +50,8 @@ namespace Events3.ViewModels
             SpecialShabassos = specialShabassos;
             Months = months;
             Parshios = parshios;
+            LifeEvents = lifeEvents;
+            EventDescription = eventDescription;
         }
 
     }

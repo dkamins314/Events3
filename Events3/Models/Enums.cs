@@ -65,6 +65,8 @@ namespace Events3.Models
             SelectSpecialShabbos,
             [Display(Name = "Parshas Shekalim")]
             ParshasShekalim,
+            [Display(Name = "Shabbos Chol Hamoed")]
+            ShabbosCholHamoed,
             [Display(Name = "Parshas Zachor")]
             ParshasZachor,
             [Display(Name = "Parshas Para")]
@@ -167,9 +169,13 @@ namespace Events3.Models
             Nitzavim_Vayeilech
         }
 
+        
         public enum LifeEvents
         {
+            [Display(Name = "Please Select Life Event")]
+            Select,
             Birth,
+            [Display(Name = "Shalom Zachor")]
             ShalomZachar,
             Bris,
             Upshearen,

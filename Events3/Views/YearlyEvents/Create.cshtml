@@ -14,7 +14,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="StartingDate" class="control-label"></label>
-                <input asp-for="StartingDate" class="form-control"/>
+                <input asp-for="StartingDate" class="form-control" />
                 <span asp-validation-for="StartingDate" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -24,7 +24,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="EndingDate" class="control-label"></label>
-                <input asp-for="EndingDate" class="form-control"/>
+                <input asp-for="EndingDate" class="form-control" />
                 <span asp-validation-for="EndingDate" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -40,7 +40,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="SpecialShabassos" class="control-label"></label>
-                <select asp-for="SpecialShabassos" class="form-control" 
+                <select asp-for="SpecialShabassos" class="form-control"
                         asp-items="Html.GetEnumSelectList<Enums.SpecialShabassos>()"></select>
                 <span asp-validation-for="SpecialShabassos" class="text-danger"></span>
             </div>
@@ -55,6 +55,18 @@
                 <select asp-for="Parshios" class="form-control"
                         asp-items="Html.GetEnumSelectList<Enums.Parshios>()"></select>
                 <span asp-validation-for="Parshios" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LifeEvents" class="control-label"></label>
+                <select asp-for="LifeEvents" class="form-control"
+                        asp-items="Html.GetEnumSelectList<Enums.LifeEvents>()"></select>
+                <span asp-validation-for="SpecialEvents" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for =""EventDescription">EventDescription</label>
+                <textarea asp-for="EventDescription" class="form-control"
+                text-wrap: normal" type="text" placeholder="Event Description:"></textarea>
+                <span asp-validation-for ="EventDescription"class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

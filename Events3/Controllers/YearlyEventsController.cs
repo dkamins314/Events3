@@ -59,7 +59,8 @@ namespace Events3.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create
-            ([Bind("Id,StartingDate,EndingDate,SpecialEvents,SpecialShabassos,Months,Parshios,StartTime,EndTime")] YearlyEvents yearlyEvents)
+            ([Bind("Id,StartingDate,EndingDate,SpecialEvents,SpecialShabassos," +
+                   "Months,Parshios,StartTime,EndTime,LifeEvents,EventDescription")] YearlyEvents yearlyEvents)
         {
             if (ModelState.IsValid)
                

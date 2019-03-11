@@ -32,6 +32,8 @@ namespace Events3.Models
         public SpecialShabassos SpecialShabassos { get; set; }
         public Months Months { get; set; }
         public Parshios Parshios { get; set; }
+        public LifeEvents LifeEvents { get; set; }
+        public string EventDescription { get; set; }
     }
 }
     

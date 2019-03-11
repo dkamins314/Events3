@@ -4,14 +4,16 @@ using Events3.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Events3.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190310201408_migration5a")]
+    partial class migration5a
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -28,8 +30,6 @@ namespace Events3.Data.Migrations
                     b.Property<string>("EndTime");
 
                     b.Property<DateTime>("EndingDate");
-
-                    b.Property<string>("EventDescription");
 
                     b.Property<int>("LifeEvents");
 
@@ -59,9 +59,6 @@ namespace Events3.Data.Migrations
                     b.Property<string>("EndTime");
 
                     b.Property<DateTime>("EndingDate");
-
-                    b.Property<string>("EventDescription")
-                        .HasMaxLength(1000);
 
                     b.Property<int>("LifeEvents");
 
