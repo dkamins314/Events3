@@ -4,16 +4,27 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Your Schedules</h1>
 
 <p>
+    
     <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-
-
+            <th>
+                @Html.DisplayNameFor(model => model.StartingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndTime)
+            </th>
 
             <th>
                 @Html.DisplayNameFor(model => model.SpecialEvents)
@@ -27,13 +38,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Parshios)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StartTime)
-            </th>
-
-            <th>
-                @Html.DisplayNameFor(model => model.EndTime)
-            </th>
+  
             <th>
                 @Html.DisplayNameFor(model => model.LifeEvents)
             </th>
@@ -44,42 +49,51 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-    <tr>
-      
+        
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @item.StartingDate.ToString("MM/dd/yyyy")
+            </td>
+            <td>
+                @item.StartTime
+            </td>
+            <td>
+                @item.EndingDate.ToString("MM/dd/yyyy")
+            </td>
+            <td>
+                @item.EndTime
+            </td>
 
-        <td>
-            @Html.DisplayFor(modelItem => item.SpecialEvents)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SpecialShabassos)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Months)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Parshios)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StartTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EndTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LifeEvents)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EventDescription)
-        </td>
+            <td>
+                @item.SpecialEvents
+            </td>
+            <td>
+                @item.SpecialShabassos
+            </td>
+            <td>
+                @item.Months
+            </td>
+            <td>
+                @item.Parshios
+            </td>
+           
+           
+            <td>
+                @item.LifeEvents
+            </td>
+            <td>
+                @item.EventDescription
+            </td>
 
-        <td>
-            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> <br>
-            <a asp-action="Details" asp-route-id="@item.Id">Details</a> <br>
-            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-        </td>
-    </tr>
-   
-}
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> <br>
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> <br>
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+
+        }
     </tbody>
 </table>

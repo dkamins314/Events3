@@ -93,7 +93,8 @@ namespace Events3.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,SpecialEvents,SpecialShabassos,Months,Parshios,StartTime,EndTime")] YearlyEvents yearlyEvents)
+        public async Task<IActionResult> Edit(int id,  [Bind("Id,StartDate,EndDate," +
+          "SpecialEvents,SpecialShabassos,Months,Parshios,StartTime,EndTime,EventDescription")] YearlyEvents yearlyEvents)
         {
             if (id != yearlyEvents.Id)
             {
