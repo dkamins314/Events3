@@ -13,14 +13,14 @@ namespace Events3.ViewModels
 
         [Key] public int Id { get; set; }
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:MM-DD-YYYY}", ApplyFormatInEditMode = true)]
         [Display(Name = "Starting Date")]
         public DateTime StartingDate { get; set; }
 
         [Display(Name = "Starting Time")]
         public string StartTime { get; set; }
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:MM-DD-YYYY}", ApplyFormatInEditMode = true)]
         [Display(Name = "Ending Date")]
         public DateTime EndingDate { get; set; }
 
